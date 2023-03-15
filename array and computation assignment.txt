@@ -1,0 +1,112 @@
+1. public class PrimeAndFibonacci {
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Main method to display prime numbers between 1 to 500
+    public static void main(String[] args) {
+        System.out.println("Prime numbers between 1 to 500 are:");
+        for (int i = 2; i <= 500; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+
+        // Method to find the sum of all even-valued terms in the Fibonacci sequence
+        int prev = 1;
+        int curr = 2;
+        int sum = 2; // initialize sum with 2 because curr is already even
+        while (curr <= 4000000) {
+            int next = prev + curr;
+            if (next % 2 == 0) {
+                sum += next;
+            }
+            prev = curr;
+            curr = next;
+        }
+        System.out.println("Sum of even-valued terms in the Fibonacci sequence whose values do not exceed four million is: " + sum);
+    }
+}
+
+
+
+2.    import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class PalindromeCheckerGUI extends JFrame implements ActionListener {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JTextField numberField;
+    JLabel resultLabel;
+
+    public PalindromeCheckerGUI() {
+        super("Palindrome Checker");
+        setLayout(new FlowLayout());
+
+        // Create number input field
+        numberField = new JTextField(10);
+        add(new JLabel("Enter a number: "));
+        add(numberField);
+
+        // Create check button
+        JButton checkButton = new JButton("Check");
+        add(checkButton);
+        checkButton.addActionListener(this);
+
+        // Create result label
+        resultLabel = new JLabel("");
+        add(resultLabel);
+
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+
+
+
+3.      public class Main {
+    public static void main(String[] args) {
+      int[] arr = {1, 2, 3, 4, 5};
+      int num = 3;
+      for (int i = 0; i < arr.length; i++) {
+        System.out.println(arr[i]);
+      }
+      for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == num) {
+          System.out.println("number found at index " + i);
+        } else {
+          System.out.println("number not found in this array");
+        }
+      }
+      int[] newArr = new int[arr.length];
+      for (int i = 0; i < arr.length; i++) {
+        newArr[i] = arr[arr.length - 1 - i];
+      }
+      for (int i = 0; i < newArr.length; i++) {
+        System.out.println(newArr[i]);
+      }
+      int sum = 0;
+      int product = 1;
+      for (int i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        product *= arr[i];
+      }
+      System.out.println(sum);
+      System.out.println(product);
+    }
+  } 
